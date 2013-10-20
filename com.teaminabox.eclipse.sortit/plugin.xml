@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            name="Sort Numerically"
+            description="Sort Selected Text Numerically"
+            categoryId="org.eclipse.ui.category.edit"
+            id="com.teaminabox.eclipse.sortit.NumericSort">
+      </command>
+      <command
+            name="Sort Case Insensitively"
+            description="Sort Selected Text Case Insensitively"
+            categoryId="org.eclipse.ui.category.edit"
+            id="com.teaminabox.eclipse.sortit.CaseInsensitiveSort">
+      </command>
+      <command
+            name="Sort Case Sensitively"
+            description="Sort Selected Text Case Sensitively"
+            categoryId="org.eclipse.ui.category.edit"
+            id="com.teaminabox.eclipse.sortit.CaseSensitiveSort">
+      </command>
+      <command
+            name="Reverse Text"
+            description="Reverse The Order Of Selected Text"
+            categoryId="org.eclipse.ui.category.edit"
+            id="com.teaminabox.eclipse.sortit.Reverse">
+      </command>
+      <command
+            name="Sort by Length"
+            description="Sort the selected text by line length"
+            categoryId="org.eclipse.ui.category.edit"
+            id="com.teaminabox.eclipse.sortit.LengthSort">
+      </command>
+   </extension>
+   <extension
+   		 id="com.teaminabox.eclipse.sortItActionSet"
+         name="sortItActionSet"
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            label="Sort It"
+            visible="true"
+            id="com.teaminabox.eclipse.sortit.actionSet">
+         <menu
+               label="Sort"
+               path="edit/additions"
+               id="com.teaminabox.eclipse.sortit.editing">
+         </menu>
+         <action
+               definitionId="com.teaminabox.eclipse.sortit.Length"
+               label="Length Sort"
+               class="com.teaminabox.eclipse.sortit.LengthSortAction"
+               menubarPath="edit/com.teaminabox.eclipse.sortit.editing/additions"
+               id="com.teaminabox.eclipse.sortit.LengthSortAction">
+         </action>
+         <action
+               class="com.teaminabox.eclipse.sortit.NumericSortAction"
+               definitionId="com.teaminabox.eclipse.sortit.NumericSort"
+               id="com.teaminabox.eclipse.sortit.NumericSortAction"
+               label="Numeric Sort"
+               menubarPath="edit/com.teaminabox.eclipse.sortit.editing/additions">
+         </action>
+         <action
+               class="com.teaminabox.eclipse.sortit.ReverseAction"
+               definitionId="com.teaminabox.eclipse.sortit.Reverse"
+               id="com.teaminabox.eclipse.sortit.ReverseAction"
+               label="Reverse Text"
+               menubarPath="edit/com.teaminabox.eclipse.sortit.editing/additions">
+         </action>
+         <action
+               class="com.teaminabox.eclipse.sortit.CaseSensitiveSortAction"
+               definitionId="com.teaminabox.eclipse.sortit.CaseSensitiveSort"
+               id="com.teaminabox.eclipse.sortit.CaseSensitiveSortAction"
+               label="Case Sensitive Sort"
+               menubarPath="edit/com.teaminabox.eclipse.sortit.editing/additions">
+         </action>
+         <action
+               class="com.teaminabox.eclipse.sortit.CaseInsensitiveSortAction"
+               definitionId="com.teaminabox.eclipse.sortit.CaseInsensitiveSort"
+               id="com.teaminabox.eclipse.sortit.CaseInsensitiveSortAction"
+               label="Case Insensitive Sort"
+               menubarPath="edit/com.teaminabox.eclipse.sortit.editing/additions">
+         </action>
+      </actionSet>
+   </extension>
+   <extension
+   		 id="com.teaminabox.eclipse.sortit.editors.popupMenu"
+         name="SortItPopupMenu"
+         point="org.eclipse.ui.popupMenus">
+      <viewerContribution
+            targetID="#TextEditorContext"
+            id="sortit.viewerContribution">
+         <menu
+               label="Sort"
+               path="additions"
+               id="com.teaminabox.eclipse.sortit.popupmenu">
+         </menu>
+         <action
+               class="com.teaminabox.eclipse.sortit.LengthSortAction"
+               id="com.teaminabox.eclipse.sortit.LengthSortAction"
+               label="Length Sort"
+               menubarPath="com.teaminabox.eclipse.sortit.popupmenu/additions">
+         </action>
+         <action
+               class="com.teaminabox.eclipse.sortit.NumericSortAction"
+               id="com.teaminabox.eclipse.sortit.NumericSort"
+               label="Numeric Sort"
+               menubarPath="com.teaminabox.eclipse.sortit.popupmenu/additions">
+         </action>
+         <action
+               class="com.teaminabox.eclipse.sortit.ReverseAction"
+               id="com.teaminabox.eclipse.sortit.Reverse"
+               label="Reverse Text"
+               menubarPath="com.teaminabox.eclipse.sortit.popupmenu/additions">
+         </action>
+         <action
+               class="com.teaminabox.eclipse.sortit.CaseSensitiveSortAction"
+               id="com.teaminabox.eclipse.sortit.CaseSensitiveSort"
+               label="Case Sensitive Sort"
+               menubarPath="com.teaminabox.eclipse.sortit.popupmenu/additions">
+         </action>
+         <action
+               class="com.teaminabox.eclipse.sortit.CaseInsensitiveSortAction"
+               id="com.teaminabox.eclipse.sortit.CaseInsensitiveSort"
+               label="Case Insensitive Sort"
+               menubarPath="com.teaminabox.eclipse.sortit.popupmenu/additions">
+         </action>
+      </viewerContribution>
+      <viewerContribution
+            targetID="#CompilationUnitEditorContext"
+            id="sortit.java.viewerContribution">
+        <menu
+               label="Sort"
+               path="additions"
+               id="com.teaminabox.eclipse.sortit.java.popupmenu">
+         </menu>
+        <action
+              class="com.teaminabox.eclipse.sortit.LengthSortAction"
+              id="com.teaminabox.eclipse.sortit.LengthSort"
+              label="Length Sort"
+              menubarPath="com.teaminabox.eclipse.sortit.java.popupmenu/additions">
+        </action>
+         <action
+               label="Numeric Sort"
+               class="com.teaminabox.eclipse.sortit.NumericSortAction"
+               menubarPath="com.teaminabox.eclipse.sortit.java.popupmenu/additions"
+               id="com.teaminabox.eclipse.sortit.NumericSort">
+         </action>
+         <action
+               label="Reverse Text"
+               class="com.teaminabox.eclipse.sortit.ReverseAction"
+               menubarPath="com.teaminabox.eclipse.sortit.java.popupmenu/additions"
+               id="com.teaminabox.eclipse.sortit.Reverse">
+         </action>
+         <action
+               class="com.teaminabox.eclipse.sortit.CaseSensitiveSortAction"
+               id="com.teaminabox.eclipse.sortit.CaseSensitiveSort"
+               label="Case Sensitive Sort"
+               menubarPath="com.teaminabox.eclipse.sortit.java.popupmenu/additions">
+         </action>
+         <action
+               class="com.teaminabox.eclipse.sortit.CaseInsensitiveSortAction"
+               id="com.teaminabox.eclipse.sortit.CaseInsensitiveSort"
+               label="Case Insensitive Sort"
+               menubarPath="com.teaminabox.eclipse.sortit.java.popupmenu/additions">
+         </action>
+      </viewerContribution>
+   </extension>
+    <extension
+       point="org.eclipse.ui.bindings">
+       <key
+          sequence="CTRL+SHIFT+F"
+          contextId="org.eclipse.ui.textEditorScope"
+          commandId="com.teaminabox.eclipse.sortit.CaseSensitiveSort"
+          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+    </extension>
+
+</plugin>

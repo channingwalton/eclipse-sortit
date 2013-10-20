@@ -1,0 +1,23 @@
+Version 1.5.0
+	Added line length sort
+Version 1.4.0
+	Added Sort It to the Compilation unit editor context menus
+Version 1.3.2
+	Fixed a bug: if two text editors are open, and a sort has been performed on one, the cursor placed in the second and the edit menu used to sort the second
+		editor, the contents of the first editor were sorted.
+Version 1.3.1
+	Numeric Sort now supports scientific notation and floats as well as integers
+	Made line endings match whatever the file being sorted is using
+	Finally added unit tests - the shame became too much!
+Version 1.3.0
+	Added support to sort whole file if no lines are selected
+	Added KeyBinding CTRL+SHIFT+F that does a caxe sensitive sort
+Version 1.2.1
+	Minor bug fix
+Version 1.2.0
+	Updated plugin for Eclispe 3.0
+	Removed default key bindings because I simply couldn't find anything meaningful that wouldn't clash with existing key bindings.
+Version 1.1.0
+	Added reverse option and used new key bindings.
+Version 1.0.0
+	First release.
