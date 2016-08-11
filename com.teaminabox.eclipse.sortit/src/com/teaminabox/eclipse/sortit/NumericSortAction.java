@@ -16,7 +16,7 @@ public class NumericSortAction extends SortItAction {
 	  };
   }
 
-  private int compareStrings(String first, String second) {
+  int compareStrings(String first, String second) {
 	  double x = getNumber(first);
 	  double y = getNumber(second);
 	  if (x < y) {

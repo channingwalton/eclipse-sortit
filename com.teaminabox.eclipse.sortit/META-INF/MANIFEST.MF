@@ -14,3 +14,4 @@ Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Channing Walton
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ManifestVersion: 2
+Bundle-ClassPath: classes/
