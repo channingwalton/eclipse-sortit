@@ -1,8 +1,7 @@
 Manifest-Version: 1.0
 Bundle-Name: SortIt
 Bundle-SymbolicName: com.teaminabox.eclipse.sortit;singleton:=true
-Bundle-Version: 1.5.0.qualifier
-Bundle-ClassPath: lib/scala-library-2.8.1.jar
+Bundle-Version: 1.6.0.qualifier
 Bundle-Activator: com.teaminabox.eclipse.sortit.SortItPlugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
